@@ -88,16 +88,17 @@ function squareArray(arr){
 // Refactor the readFileContents function from Task 2 to use async/await. The function should now
 // return the file contents instead of using a callback.
 
-const fs_2 = require('fs');
+const fs_2 = require('fs').promises;
 
-function readFileContent(filename, callback) {
-    fs_2.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-            return callback(err);
-        }
-        callback(null, data);
-    });
+async function readFileContent(filename) {
+    try {
+        const data = await fs_2.readFile(filename, 'utf8');
+        return data;
+    } catch (err) {
+        throw err; // Handling error
+    }
 }
+
 // TASK 5
 // Use multiplyByTwo function from Task 1 to multiply a given number by 2 and display the result
 // using console.log.
@@ -131,14 +132,10 @@ squareArray([1,2,3,4,5])
  //calling function of task 3
 
 
-
- readFileContent('data.txt', (err, data) => {
-    if (err) {
-        console.error('Error reading file:', err);
-    } else {
-        console.log('File contents:', data);
-    }
-}); //calling function of task 4
+ readFileContent('data.txt')
+ .then(data => console.log('File contents:', data))
+ .catch(err => console.error('Error reading file:', err));
+ //calling function of task 4
 
 
 
