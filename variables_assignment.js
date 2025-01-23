@@ -3,8 +3,8 @@ let name = "Sonia Sahu"; //my name
 let age = 22; //my age
 let isStudent = true; //I am a student hence true
 
-
-
+let a= 10/undefined;
+console.log(a)
 //TASK 2
 let num1 = 30; //first number
 let num2 = 50; //second number
@@ -23,6 +23,12 @@ let firstName = "Sonia"; //my first name
 let lastName = "Sahu"; //my last name
 let occupation = "Trainee Software Engineer"; //my occupation
 let fullName = firstName + " " + lastName; //concatenating first name and last name
+const p = 10;
+var v =20;
+p=20;
+console.log(p);
+v =30;
+console.log(v);
 
 let bio =
   " My name is " +

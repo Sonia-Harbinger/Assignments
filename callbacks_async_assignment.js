@@ -3,7 +3,7 @@
 
 // Create a function named multiplyByTwo that takes a number as input and multiplies it by 2.
 // Instead of directly returning the result, this function should invoke a callback function with the
-// calculated value as an argument.
+// calculated value as an argument. 
 
 function multiplyByTwo(num, callback) {
 let result = num *2; //multiplying number by 2
